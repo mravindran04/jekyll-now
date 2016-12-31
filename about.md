@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I am Linux kernel and BSP engineer having 10+ experience in board bringing with domain expertise in Automtive infotainment.
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+I want to keep this blog to keep track of my work in opensource, and techinical know-hows which I come across in the dailylife.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[mravindran04@gmail.com](mailto:mravindran@gmail.com)
