@@ -12,12 +12,14 @@ Basically the steps are
 
 1. download debian unoffical iso as it will have the prop firmwares requried for wifi.
 
-2. boot from burned usb and when you get the tasksel(package selection) deselect to choose none as we need to configure wifi before that.
+2. boot from burned usb and when you get the tasksel(package selection) deselect to choose none as we need to configure wifi before that and that can be dont after the firstboot.
 
-3. connect the wifi 
+3. connect to he wifi and run tasksel to install desired packages.
 
   a. ip -a; iwconfig; ip link set wlan0 up; iwlist scan
+  
   b. wpa_passphrase myssid my_very_secret_passphrase >> /etc/network/interfaces
+  
   c. it should be simillar to be like this
 	auto wlan0
 	iface wlan0 inet dhcp
