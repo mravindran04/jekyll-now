@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /about/
+permalink: /FOSS contributions/
 ---
 
 I am Linux kernel and BSP engineer having 10+ experience in board bringing with domain expertise in Automtive infotainment.
