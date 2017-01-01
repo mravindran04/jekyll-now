@@ -21,9 +21,13 @@ Basically the steps are
   b. wpa_passphrase myssid my_very_secret_passphrase >> /etc/network/interfaces
   
   c. it should be simillar to be like this
+  
 	auto wlan0
+
 	iface wlan0 inet dhcp
+	
     	wpa-ssid [ESSID]
+	
     	wpa-psk ccb290fd4fe6449e050edd02ad44627b16ce0151668f5f53c01b
      
 
