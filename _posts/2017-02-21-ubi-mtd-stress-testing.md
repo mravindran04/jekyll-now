@@ -45,3 +45,82 @@ http://linux-mtd.infradead.narkive.com/ZWVdFwHz/good-stress-test-for-ubifs
 http://www.aleph1.co.uk/lurker/message/20080516.114655.2a368241.en.html  
 http://labs.isee.biz/index.php/Board_validation_and_diagnostic_tools#.23001.C2.A0:_Simple_read.2Fwrite_test  
 
+ubifs debugging
+================
+http://www.linux-mtd.infradead.org/faq/ubi.html#L_how_debug
+http://www.linux-mtd.infradead.org/faq/ubifs.html#L_debug_msgs
+http://linux-mtd.infradead.narkive.com/2jtVsnxT/ubifs-error
+
+misc tests:
+===========
+
+#insmod mtd_torturetest.ko dev=3 check=1 cycles_count=1 eb=0 ebcnt=4 gran=1 
+
+
+while(1)  
+{  
+create and write a random image(with different block size using dd  
+command) to nand flash  
+  
+if "disk space is reached maxim size"  
+delete all the files  
+  
+}  
+
+
+
+	#!/bin/sh
+
+	sizecount=0
+	localcount=0
+
+	deletelimit=`expr 500 \* 1024 \* 1024` # 500 MB
+	FILENAME="1 2 3 4 5 6 7 8 9 10"
+
+	rm -rf /ubifs_rootfs/*
+
+	while [ 1 ]
+	do
+
+	for filename in $FILENAME
+	do
+	size=`expr 4096 \* 10`
+
+	dd if=/dev/urandom of=/ubifs_rootfs/foo1${filename} bs=1024
+	count=4 2> /dev/null ;
+	dd if=/dev/urandom of=/ubifs_rootfs/foo2${filename} bs=1024
+	count=4 2> /dev/null ;
+	dd if=/dev/urandom of=/ubifs_rootfs/foo3${filename} bs=1024
+	count=4 2> /dev/null ;
+	dd if=/dev/urandom of=/ubifs_rootfs/foo4${filename} bs=1024
+	count=4 2> /dev/null ;
+	dd if=/dev/urandom of=/ubifs_rootfs/foo5${filename} bs=1024
+	count=4 2> /dev/null ;
+	dd if=/dev/urandom of=/ubifs_rootfs/foo6${filename} bs=1024
+	count=4 2> /dev/null ;
+	dd if=/dev/urandom of=/ubifs_rootfs/foo7${filename} bs=1024
+	count=4 2> /dev/null ;
+	dd if=/dev/urandom of=/ubifs_rootfs/foo8${filename} bs=1024
+	count=4 2> /dev/null ;
+	dd if=/dev/urandom of=/ubifs_rootfs/foo9${filename} bs=1024
+	count=4 2> /dev/null ;
+	dd if=/dev/urandom of=/ubifs_rootfs/foo10${filename} bs=1024
+	ount=4 2> /dev/null ;
+	
+	ocalcount=`expr $localcount + $size`
+	izecount=`expr $sizecount + $size`
+	one
+	
+	f [ $localcount -gt $deletelimit ] ; then
+	cho "Clean up!!!"
+	ocalcount=0
+	m -rf /ubifs_rootf/* ; sync
+	i
+
+	date ; sync
+	echo "Bytes Written to Nand flash:`expr $sizecount / 1048576 ` MB"
+	
+	done
+
+
+ 
