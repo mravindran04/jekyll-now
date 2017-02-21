@@ -30,12 +30,12 @@ https://mentors.debian.net/intro-maintainers
 
 pbuilder
 ========
-(http://manpages.ubuntu.com/manpages/precise/man8/pbuilder.8.html)
-(https://blog.packagecloud.io/eng/2015/05/18/building-deb-packages-with-pbuilder/)
-(https://people.debian.org/~debalance/packaging-with-git.html)
-(https://honk.sigxcpu.org/piki/development/debian_packages_in_git/)
-(http://honk.sigxcpu.org/projects/git-buildpackage/manual-html/man.gbp.pq.html)
-(http://http.debian.net/debian/pool/main/b/busybox/busybox_1.22.0-19.dsc)
+[1](http://manpages.ubuntu.com/manpages/precise/man8/pbuilder.8.html)
+[2](https://blog.packagecloud.io/eng/2015/05/18/building-deb-packages-with-pbuilder/)
+[3](https://people.debian.org/~debalance/packaging-with-git.html)
+[4](https://honk.sigxcpu.org/piki/development/debian_packages_in_git/)
+[5](http://honk.sigxcpu.org/projects/git-buildpackage/manual-html/man.gbp.pq.html)
+[6](http://http.debian.net/debian/pool/main/b/busybox/busybox_1.22.0-19.dsc)
 
 
 gbp import-dsc
