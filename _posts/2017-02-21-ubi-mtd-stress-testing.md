@@ -51,22 +51,15 @@ http://www.linux-mtd.infradead.org/faq/ubi.html#L_how_debug
 http://www.linux-mtd.infradead.org/faq/ubifs.html#L_debug_msgs
 http://linux-mtd.infradead.narkive.com/2jtVsnxT/ubifs-error
 
+
+integck tests:
+===============
+http://linux-mtd.infradead.narkive.com/BtNXTZln/gpmi-nand-crashes-with-ubifs
+
 misc tests:
 ===========
 
 #insmod mtd_torturetest.ko dev=3 check=1 cycles_count=1 eb=0 ebcnt=4 gran=1 
-
-
-while(1)  
-{  
-create and write a random image(with different block size using dd  
-command) to nand flash  
-  
-if "disk space is reached maxim size"  
-delete all the files  
-  
-}  
-
 
 
 	#!/bin/sh
@@ -107,15 +100,15 @@ delete all the files
 	dd if=/dev/urandom of=/ubifs_rootfs/foo10${filename} bs=1024
 	ount=4 2> /dev/null ;
 	
-	ocalcount=`expr $localcount + $size`
-	izecount=`expr $sizecount + $size`
-	one
+	localcount=`expr $localcount + $size`
+	sizecount=`expr $sizecount + $size`
+	done
 	
-	f [ $localcount -gt $deletelimit ] ; then
-	cho "Clean up!!!"
-	ocalcount=0
-	m -rf /ubifs_rootf/* ; sync
-	i
+	if [ $localcount -gt $deletelimit ] ; then
+	echo "Clean up!!!"
+	localcount=0
+	rm -rf /ubifs_rootf/* ; sync
+	fi
 
 	date ; sync
 	echo "Bytes Written to Nand flash:`expr $sizecount / 1048576 ` MB"
